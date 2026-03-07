@@ -13,7 +13,7 @@ Standard RAG (Retrieval-Augmented Generation) systems **always answer**, even wh
 
 ```python
 # Standard RAG on a hard question
-> "Who was Mustafa Kemal?"
+> "Who was David Bohm?"
 > "Geoffrey Howe was Chancellor..."  ❌ Complete hallucination
 
 

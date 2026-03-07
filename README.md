@@ -24,7 +24,7 @@ Cautious RAG uses concentration inequalities from probability theory to ask: "Do
 If the statistical lower bound on relevance falls below a threshold → REFUSE to answer.
 
 # Cautious RAG on the same question
-> "Who was Mustafa Kemal?"
+> "Who was David Bohm?"
 > "I'm not confident enough to answer. Need more information."  ✅ Safe refusal
 
 🧮 The Math
@@ -49,7 +49,7 @@ Correct when answered	20%	50%	2.5x better
 Example Run
 text
 
-Query: Who was Mustafa Kemal?
+Query: Who was David Bohm?
   Standard: ❌ "Geoffrey Howe was Chancellor..."
   Cautious: 🤔 REFUSED (LB=0.19 < 0.2)
 

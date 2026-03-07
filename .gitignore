@@ -77,4 +77,5 @@ data/processed/
 # Results (keep the plot)
 results/
 !results/hallucination_reduction_simple.png
-EOF
+EOF\n# PDF files
+*.pdf

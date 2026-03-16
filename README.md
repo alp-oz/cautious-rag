@@ -7,7 +7,7 @@
 
 ---
 
-## 📖 The Problem
+ 📖 The Problem
 
 Standard RAG (Retrieval-Augmented Generation) systems **always answer**, even when they shouldn't:
 

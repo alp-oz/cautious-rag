@@ -96,7 +96,7 @@ from cautious_rag import CautiousRAG
 rag = CautiousRAG(documents)
 
 # Ask a question
-result = rag.answer("Who was Ataturk?")
+result = rag.answer("Who was David Bohm?")
 
 if result.confident:
     print(f"Answer: {result.answer}")

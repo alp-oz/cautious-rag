@@ -8,17 +8,19 @@ Standard RAG systems answer every query, even when retrieved documents provide w
 
 ## Method
 
-For a query with retrieved similarity scores $\hat{\mu}$ over $n$ documents, we compute a lower confidence bound on the true mean relevance $\mu$:
+For a query with `n` retrieved documents, let `μ̂` denote the sample mean similarity score. We compute a lower confidence bound
 
-$$\text{lower\_bound} = \hat{\mu} - \varepsilon$$
+```
+lower_bound = μ̂ - ε
+```
 
-and answer only when $\text{lower\_bound} \geq \tau$ for a fixed threshold $\tau$. The bound $\varepsilon$ is chosen via one of three concentration inequalities depending on the retrieval setting:
+and answer only when `lower_bound ≥ τ` for a fixed threshold `τ`. The slack `ε` is derived from one of three concentration inequalities depending on the retrieval setting:
 
-| Inequality | Assumption | Bound |
+| Inequality | Assumption | Guarantee |
 |---|---|---|
-| Hoeffding (1963) | Independent documents | $P(\|\hat{\mu} - \mu\| \geq \varepsilon) \leq 2\exp(-2n\varepsilon^2)$ |
-| Azuma (1967) | Sequential / dependent retrieval | $P(\|M_n\| \geq \varepsilon) \leq 2\exp(-\varepsilon^2 / 2nc^2)$ |
-| Bernstein (1924) | Low variance scores | Variance-aware tighter bound |
+| Hoeffding (1963) | Independent documents | P(\|μ̂ − μ\| ≥ ε) ≤ 2·exp(−2nε²) |
+| Azuma (1967) | Sequential / dependent retrieval | P(\|Mₙ\| ≥ ε) ≤ 2·exp(−ε²/2nc²) |
+| Bernstein (1924) | Low-variance scores | Variance-aware tighter bound |
 
 The Azuma bound is the natural choice when retrieval is done sequentially or with reranking, as the similarity scores form a martingale difference sequence.
 
@@ -82,6 +84,3 @@ The concentration inequalities used here are classical tools from probability th
 ## License
 
 MIT
-
-
-
